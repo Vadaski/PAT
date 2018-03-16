@@ -23,6 +23,7 @@ public class No_1003 {
 				System.out.println("NO");
 			}
 		}
+		
 
 	}
 

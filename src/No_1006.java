@@ -1,14 +1,14 @@
-
 import java.util.Scanner;
-
 public class No_1006 {
-
+	public void result( ) {
+		
+	}
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		Integer ipn = in.nextInt();
 		String input = ipn.toString();
 		char[] inputC = input.toCharArray();
-		String[] num = new String[] {"error","S","B"};
+		String[] num = new String[] {"error","S","B","Q","W"};
 		int k = inputC.length-1;
 		StringBuffer buffer = new StringBuffer();
 		for (int i = 0; i < inputC.length; i++) {
