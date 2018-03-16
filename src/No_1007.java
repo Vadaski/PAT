@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 
 public class No_1007 {
-	static int want=0;
+	static int want=0;	
+	
 	public static boolean isSS(int number) {
 		for (int i = 2; i < number-1; i++) {
 			if(number%i==0) {
@@ -17,7 +18,7 @@ public class No_1007 {
 	
 	public static ArrayList<Integer> getAll(int i) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
-		for (int j = 2; j < i; j++) {
+		for (int j = 2; j <=i; j++) {
 			if(isSS(j)) {
 				list.add(j);
 			}
@@ -41,5 +42,4 @@ public class No_1007 {
 		 count(list);
 		 System.out.println(want);
 	}
-
 }
