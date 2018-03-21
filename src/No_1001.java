@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class no1001 {
+public class No_1001 {
 	static int count=0;
 	public static void callatz(int number) {
 		if(number == 1) {
