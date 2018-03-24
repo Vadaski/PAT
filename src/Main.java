@@ -1,46 +1,33 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
-
 public class Main {
-	public static int findMax(int[] xy) {
-		int max = 0;
-		int where = -1;
-		for (int i = 0; i < xy.length; i++) {
-			if (xy[i]>max) {
-				max = xy[i];
-				where = i;
+	
+	public static void moveR(int step,int[] numbers) {
+		int move = step%numbers.length;
+		for (int j = 0; j < move; j++) {				
+			int last = numbers[numbers.length-1];
+			for (int i = numbers.length-2; i>=0 ; i--) {
+				numbers[i+1] = numbers[i];
 			}
+			numbers[0] = last;
 		}
-		return where;
-	}
-
-	public static int findMin(int[] xy) {
-		int min = 10000;
-		int where = -1;
-		for (int i = 0; i < xy.length; i++) {
-			if (xy[i]<min) {
-				min = xy[i];
-				where = i;
-			}
-		}
-		return where;
 	}
 	
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int size = in.nextInt();
-		String[] id = new String[size];
-		int[] xy = new int[size];
-		for (int i = 0; i < size; i++) {					
-				id[i] = in.next();
-				int x = in.nextInt();
-				int y = in.nextInt();
-				xy[i] = Math.abs(x*y);
-			
+		int step = in.nextInt();
+		int[] numbers = new int[size];
+		in = new Scanner(System.in);
+		String[] number = in.nextLine().split("\\s+");
+		for (int i = 0; i < numbers.length; i++) {
+			numbers[i] = Integer.parseInt(number[i]);
 		}
-		in.close();
-		System.out.println(id[findMin(xy)]+" "+id[findMax(xy)]);
+		moveR(step, numbers);
+		StringBuffer buffer = new StringBuffer();
+		for (int i = 0; i < numbers.length; i++) {
+			buffer.append(String.valueOf(numbers[i])+" ");
+		}
+		buffer.deleteCharAt(buffer.length()-1);
+		System.out.println(buffer.toString());
 	}
 }
